@@ -19,6 +19,8 @@ John Robinson, [Bayfront Media](https://www.bayfrontmedia.com)
 ## Requirements
 
 * PHP >= 7.1.0
+* OpenSSL PHP extension
+* JSON PHP extension
 
 ## Installation
 
