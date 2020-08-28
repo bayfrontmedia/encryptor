@@ -8,8 +8,9 @@
   "keywords": [
     "php",
     "encrypt",
-    "decrypt",
     "encryption",
+    "decrypt",
+    "decryption",
     "openssl",
     "encryptor"
   ],

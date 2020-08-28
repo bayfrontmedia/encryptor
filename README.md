@@ -31,7 +31,7 @@ composer require bayfrontmedia/encryptor
 ### Start using Encryptor
 
 A private, reproducible key must be passed to the constructor. 
-The same key must be used when encrypting and decrypting a value.
+The same key must be used when encrypting and decrypting.
 If the key used to encrypt a value is lost, it will not be able to be decrypted.
 
 An optional second constructor parameter allows you to specify which [cipher method](https://www.php.net/manual/en/function.openssl-get-cipher-methods.php) to use.
@@ -132,7 +132,7 @@ Encrypts a string without serialization.
 
 **Parameters:**
 
-- `$value` (mixed)
+- `$value` (string)
 
 **Returns:**
 
