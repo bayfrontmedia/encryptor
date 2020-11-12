@@ -3,7 +3,6 @@
   "description": "A fast, simple two-way encryption library utilizing OpenSSL.",
   "homepage": "https://github.com/bayfrontmedia/encryptor",
   "license" : "MIT",
-  "version": "1.0.0",
   "type": "library",
   "keywords": [
     "php",
