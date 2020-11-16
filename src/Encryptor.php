@@ -26,7 +26,13 @@ class Encryptor
 
     public function __construct(string $key, string $cipher = 'AES-256-CBC')
     {
-        if (!in_array($cipher, openssl_get_cipher_methods())) {
+
+        /*
+         * Ensure openssl_get_cipher_methods() returns uppercase values
+         * (OpenSSL 1.1.1 does not)
+         */
+
+        if (!in_array(strtoupper($cipher), array_map('strtoupper', openssl_get_cipher_methods()))) {
             throw new InvalidCipherException('Invalid cipher method: ' . $cipher);
         }
 
