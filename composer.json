@@ -21,7 +21,7 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/bayfrontmedia/project_name/issues"
+    "issues": "https://github.com/bayfrontmedia/encryptor/issues"
   },
   "config": {
     "optimize-autoloader": true,
