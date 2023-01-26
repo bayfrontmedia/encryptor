@@ -1,19 +1,12 @@
 <?php
 
-/**
- * @package encryptor
- * @link https://github.com/bayfrontmedia/encryptor
- * @author John Robinson <john@bayfrontmedia.com>
- * @copyright 2020 Bayfront Media
- */
-
 namespace Bayfront\Encryptor;
 
 class Encryptor
 {
 
-    protected $key;
-    protected $cipher;
+    protected string $key;
+    protected string $cipher;
 
     /**
      * Encrypt constructor.
@@ -48,12 +41,12 @@ class Encryptor
      * @throws EncryptException
      */
 
-    protected function _createIv()
+    protected function _createIv(): string
     {
 
         $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher));
 
-        if (false === $iv) {
+        if (!$iv) {
             throw new EncryptException('Unable to create Initialization Vector');
         }
 
@@ -91,7 +84,7 @@ class Encryptor
      * @return string
      */
 
-    protected function _createHash(string $iv, $value): string
+    protected function _createHash(string $iv, mixed $value): string
     {
         return hash_hmac('sha256', $iv . $value, $this->key);
     }
@@ -107,7 +100,7 @@ class Encryptor
      * @throws EncryptException
      */
 
-    public function encrypt($value, bool $serialize = true): string
+    public function encrypt(mixed $value, bool $serialize = true): string
     {
 
         if (true === $serialize) {
@@ -174,7 +167,7 @@ class Encryptor
      * @throws DecryptException
      */
 
-    public function decrypt(string $data, bool $unserialize = true)
+    public function decrypt(string $data, bool $unserialize = true): mixed
     {
 
         $data = json_decode(base64_decode($data), true);
